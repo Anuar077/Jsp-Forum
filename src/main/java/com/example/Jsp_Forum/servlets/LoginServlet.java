@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
             }
             HttpSession newSession = request.getSession(true);
 
-            newSession.setMaxInactiveInterval(30*60);
+             newSession.setMaxInactiveInterval(30*60);
 
             newSession.setAttribute("userId", user.getUserId());
             newSession.setAttribute("username", user.getUsername());
