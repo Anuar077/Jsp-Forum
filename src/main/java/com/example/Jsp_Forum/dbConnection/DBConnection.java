@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBConnection {
-    private static String url = "jdbc:mysql://localhost/forum";
-    private static String driverName = "com.mysql.jdbc.Driver";
-    private static String login = "root";
-    private static String dbpassword = "root";
+    private static String url = "jdbc:postgres://localhost/forum";
+    private static String driverName = "com.postgres.jdbc.Driver";
+    private static String login = "postgres";
+    private static String dbpassword = "1020";
     static Connection connection;
     static Statement statement;
 
