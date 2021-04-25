@@ -2,17 +2,17 @@ package com.example.Jsp_Forum.beans;
 
 public class Comment implements java.io.Serializable{
 
-        private int cId;
+        private int commentid;
         private String content;
-        private int pId;
+        private int postid;
         private String username;
 
-        public int getcId() {
-            return cId;
+        public int getCommentid() {
+            return commentid;
         }
 
-        public void setcId(int cId) {
-            this.cId = cId;
+        public void setCommentId(int commentid) {
+            this.commentid = commentid;
         }
 
         public String getContent() {
@@ -23,12 +23,12 @@ public class Comment implements java.io.Serializable{
             this.content = content;
         }
 
-        public int getpId() {
-            return pId;
+        public int getPostId() {
+            return postid;
         }
 
-        public void setpId(int pId) {
-            this.pId = pId;
+        public void setPostId(int postid) {
+            this.postid = postid;
         }
 
         public String getUsername() {

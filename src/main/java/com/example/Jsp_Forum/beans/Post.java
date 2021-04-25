@@ -1,16 +1,16 @@
 package com.example.Jsp_Forum.beans;
 
 public class Post implements java.io.Serializable{
-    private int pId;
+    private int postid;
     private String title;
     private String pContent;
     private String username;
 
-    public int getpId() {
-        return pId;
+    public int getPostId() {
+        return postid;
     }
-    public void setpId(int pId) {
-        this.pId = pId;
+    public void setPostId(int postid) {
+        this.postid = postid;
     }
     public String getTitle() {
         return title;
@@ -40,7 +40,7 @@ public class Post implements java.io.Serializable{
     @Override
     public String toString() {
         return "Post{" +
-                "pId=" + pId +
+                "postid=" +postid +
                 ", title='" + title + '\'' +
                 ", pContent='" + pContent + '\'' +
                 ", username='" + username + '\'' +
