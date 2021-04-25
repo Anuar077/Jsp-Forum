@@ -1,7 +1,7 @@
 package com.example.Jsp_Forum.servlets;
 
 import com.example.Jsp_Forum.beans.Comment;
-import com.example.Jsp_Forum.dbConnection.DBConnection;
+import com.example.Jsp_Forum.dbConnection.PostConnection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,11 +19,11 @@ public class CommentServlet extends HttpServlet {
         Comment comment = new Comment();
         comment.setContent(request.getParameter("content"));
         comment.setUsername(username);
-        int pId=Integer.parseInt(request.getParameter("pId"));
-        comment.setpId(pId);
-        int result = DBConnection.createComment(comment);
+        int postId=Integer.parseInt(request.getParameter("pId"));
+        comment.setPostId(postId);
+        int result = PostConnection.createComment(comment);
 
-        response.sendRedirect("/post?pId="+pId);
+        response.sendRedirect("/post?pId="+postId);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

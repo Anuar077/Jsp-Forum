@@ -1,7 +1,7 @@
 package com.example.Jsp_Forum.servlets;
 
 import com.example.Jsp_Forum.beans.Post;
-import com.example.Jsp_Forum.dbConnection.DBConnection;
+import com.example.Jsp_Forum.dbConnection.PostConnection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +20,7 @@ public class PostServlet extends HttpServlet {
         post.setTitle(request.getParameter("title"));
         post.setpContent(request.getParameter("content"));
         post.setUsername(username);
-        int result = DBConnection.createPost(post);
+        int result = PostConnection.createPost(post);
 
         if(result!=0)
         {

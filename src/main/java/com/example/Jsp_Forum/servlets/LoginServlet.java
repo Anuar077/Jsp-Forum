@@ -1,7 +1,7 @@
 package com.example.Jsp_Forum.servlets;
 
 import com.example.Jsp_Forum.beans.User;
-import com.example.Jsp_Forum.dbConnection.DBConnection;
+import com.example.Jsp_Forum.dbConnection.UserConnection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +15,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        User user = DBConnection.getUser(request.getParameter("username"), request.getParameter("password"));
+        User user = UserConnection.getUser(request.getParameter("username"), request.getParameter("password"));
 
         if(user !=null){
             HttpSession oldSession = request.getSession(false);
