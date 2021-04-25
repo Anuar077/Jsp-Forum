@@ -11,7 +11,7 @@
 <body>
 <nav>
     <a href="index.jsp">Main page</a>
-    <a href="registration.jsp">Register</a>
+    <a href="Registration.jsp">Register</a>
     <a href="logout">Log out</a>
 </nav>
 <form action="login" method="POST">

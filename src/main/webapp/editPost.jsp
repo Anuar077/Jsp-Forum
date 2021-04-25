@@ -1,17 +1,17 @@
-<%@ page import="com.example.Jsp_Forum.dbConnection.DBConnection" %>
+<%@ page import="com.example.Jsp_Forum.dbConnection.PostConnection" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="post" class="com.example.Jsp_Forum.beans.Post"/>
 <jsp:setProperty property="*" name="post"/>
 
 <%
     String message=null;
-    int pId=post.getpId();
+    int pId=post.getPostId();
     if(request.getParameter("title")!=null && request.getParameter("pContent")!=null){
-        int status=DBConnection.updatePost(post);
+        int status=PostConnection.updatePost(post);
         if(status>0)
             message="You are successfully edit post";
     }else{
-        post=DBConnection.getPost(pId);
+        post=PostConnection.getPost(pId);
 %>
 <jsp:setProperty property="title" name="post" value="<%=post.getTitle()%>"/>
 <jsp:setProperty property="pContent" name="post" value="<%=post.getpContent()%>"/>

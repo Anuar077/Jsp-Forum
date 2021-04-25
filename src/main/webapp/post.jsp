@@ -1,5 +1,5 @@
 <%@ page import="com.example.Jsp_Forum.beans.Post" %>
-<%@ page import="com.example.Jsp_Forum.dbConnection.DBConnection" %>
+<%@ page import="com.example.Jsp_Forum.dbConnection.PostConnection" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.example.Jsp_Forum.beans.Comment" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -27,8 +27,8 @@
         List<Comment> comments = (List<Comment>) request.getAttribute("comments");
         if(comments!=null){
             for(Comment comment : comments){
-                int clikes = DBConnection.getCommentLikes(comment.getcId());
-                int cdislikes = DBConnection.getCommentDislikes(comment.getcId());
+                int clikes = PostConnection.getCommentLikes(comment.getCommentid());
+                int cdislikes = PostConnection.getCommentDislikes(comment.getCommentid());
     %>
     <div class="comment">
         <h4><%=comment.getUsername()%></h4>
@@ -44,13 +44,13 @@
     %>
     <form action="/writeComment" method="POST">
         <textarea name="content"></textarea>
-        <input type="hidden" name="pId" value="<%=post.getpId()%>">
+        <input type="hidden" name="pId" value="<%=post.getPostId()%>">
         <button>Write</button>
     </form>
     <%
         if(session.getAttribute("username").equals(post.getUsername())){
     %>
-    <button><a href="editPost.jsp?pId=<%=post.getpId()%>">Edit</a></button>
+    <button><a href="editPost.jsp?pId=<%=post.getPostId()%>">Edit</a></button>
     <%
             }
         }

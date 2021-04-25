@@ -13,6 +13,8 @@
     <a href="index.jsp">Main page</a>
     <a href="login.jsp">LogIn</a>
     <a href="logout">Log out</a>
+    <a href="posts.jsp">Post</a>
+    <a href="addPost.jsp">addPost</a>
 </nav>
 
 <form action="registration" method="POST">

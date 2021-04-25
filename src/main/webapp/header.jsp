@@ -6,7 +6,7 @@
     <%}
     else{%>
     <a href="login.jsp">LogIn</a>
-    <a href="registration.jsp">Register</a>
+    <a href="Registration.jsp">Register</a>
     <%}%>
 
 
